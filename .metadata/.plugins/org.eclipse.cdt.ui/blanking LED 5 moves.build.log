@@ -1,0 +1,12 @@
+19:55:41 **** Incremental Build of configuration Debug for project blanking LED 5 moves ****
+make all 
+Building target: blanking LED 5 moves.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,blanking LED 5 moves.map -mmcu=atmega32 -o "blanking LED 5 moves.elf"  ./main.o   
+avr-gcc.exe: LED: No such file or directory
+avr-gcc.exe: 5: No such file or directory
+avr-gcc.exe: moves.map: No such file or directory
+make: *** [blanking LED 5 moves.elf] Error 1
+
+19:55:42 Build Finished (took 908ms)
+

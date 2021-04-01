@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\Wael\Desktop\IMT_Tools\Drivers\Drivers\Timer1_Driver"/>
+		<item value="C:\Users\Wael\Desktop\IMT_Tools\Drivers\Drivers\Dig_Ext_Int_Driver"/>
+		<item value="C:\Users\Wael\Desktop\IMT_Tools\Drivers\Drivers\Timer0_Driver"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Wael\Desktop\IMT_Tools\workspace\i2c_slave"/>
+			<item value="C:\Users\Wael\Desktop\IMT_Tools\workspace\i2c_master"/>
+			<item value="C:\Users\Wael\Desktop\IMT_Tools\Drivers\rtos_labs\RTOS_Lab1\RTOS_Lab1"/>
+			<item value="C:\Users\Wael\Desktop\IMT_Tools\Drivers\Drivers\EEPROM"/>
+			<item value="C:\Users\Wael\Desktop\IMT_Tools\workspace\keypad_driver"/>
+			<item value="C:\Users\Wael\Downloads\Compressed\Keypad - Copy\Keypad - Copy"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.cdt.ui.wizards.NewCWizard2" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.cdt.ui.newCWizards"/>
+		</list>
+	</section>
+</section>

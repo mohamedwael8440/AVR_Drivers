@@ -1,0 +1,55 @@
+06:21:36 **** Incremental Build of configuration Debug for project LCD_printINT ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_printINT.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7708 bytes (23.5% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:LCD_printINT.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.11s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "LCD_printINT.hex"
+avrdude: input file LCD_printINT.hex auto detected as Intel Hex
+avrdude: writing flash (7708 bytes):
+
+Writing | ################################################## | 100% 4.96s
+
+avrdude: 7708 bytes of flash written
+avrdude: verifying flash memory against LCD_printINT.hex:
+avrdude: load data flash data from input file LCD_printINT.hex:
+avrdude: input file LCD_printINT.hex auto detected as Intel Hex
+avrdude: input file LCD_printINT.hex contains 7708 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 4.17s
+
+avrdude: verifying ...
+avrdude: 7708 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+06:21:48 Build Finished (took 11s.531ms)
+

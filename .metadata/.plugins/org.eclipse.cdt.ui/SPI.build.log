@@ -1,0 +1,30 @@
+23:16:25 **** Incremental Build of configuration Debug for project SPI ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:1:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:8:
+../LCD.h:8: warning: data definition has no type or storage class
+../LCD.h:8: warning: type defaults to 'int' in declaration of 'LCD_setposition'
+../main.c:12: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:16: warning: pointer targets in passing argument 1 of 'LCD_writestring' differ in signedness
+../main.c:19: warning: unused variable 'x'
+Finished building: ../main.c
+ 
+Building target: SPI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SPI.map -mmcu=atmega32 -o "SPI.elf"  ./DIO.o ./LCD.o ./main.o ./spi.o   
+Finished building target: SPI.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SPI.elf  "SPI.hex"
+Finished building: SPI.hex
+ 
+
+23:16:26 Build Finished (took 649ms)
+

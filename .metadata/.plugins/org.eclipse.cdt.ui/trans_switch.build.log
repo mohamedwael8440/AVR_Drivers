@@ -1,0 +1,55 @@
+15:45:22 **** Incremental Build of configuration Debug for project trans_switch ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 trans_switch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5096 bytes (15.6% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:trans_switch.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "trans_switch.hex"
+avrdude: input file trans_switch.hex auto detected as Intel Hex
+avrdude: writing flash (5096 bytes):
+
+Writing | ################################################## | 100% 2.96s
+
+avrdude: 5096 bytes of flash written
+avrdude: verifying flash memory against trans_switch.hex:
+avrdude: load data flash data from input file trans_switch.hex:
+avrdude: input file trans_switch.hex auto detected as Intel Hex
+avrdude: input file trans_switch.hex contains 5096 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 2.76s
+
+avrdude: verifying ...
+avrdude: 5096 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+15:45:28 Build Finished (took 6s.444ms)
+

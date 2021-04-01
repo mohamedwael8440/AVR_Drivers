@@ -1,0 +1,13 @@
+23:49:20 **** Incremental Build of configuration Debug for project taffic light ****
+make all 
+Building file: ../dio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"dio.d" -MT"dio.o" -c -o "dio.o" "../dio.c"
+In file included from ../dio.c:7:
+../dio.h:6: error: expected ')' before 'port'
+../dio.h:7: error: expected ')' before 'port'
+../dio.h:8: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'dio_u8ReadPinValue'
+make: *** [dio.o] Error 1
+
+23:49:21 Build Finished (took 820ms)
+

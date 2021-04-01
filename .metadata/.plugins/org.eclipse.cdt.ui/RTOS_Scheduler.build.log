@@ -1,0 +1,55 @@
+22:27:25 **** Incremental Build of configuration Debug for project RTOS_Scheduler ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_Scheduler.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2574 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_Scheduler.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_Scheduler.hex"
+avrdude: input file RTOS_Scheduler.hex auto detected as Intel Hex
+avrdude: writing flash (2574 bytes):
+
+Writing | ################################################## | 100% 1.49s
+
+avrdude: 2574 bytes of flash written
+avrdude: verifying flash memory against RTOS_Scheduler.hex:
+avrdude: load data flash data from input file RTOS_Scheduler.hex:
+avrdude: input file RTOS_Scheduler.hex auto detected as Intel Hex
+avrdude: input file RTOS_Scheduler.hex contains 2574 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.40s
+
+avrdude: verifying ...
+avrdude: 2574 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+22:27:28 Build Finished (took 3s.644ms)
+

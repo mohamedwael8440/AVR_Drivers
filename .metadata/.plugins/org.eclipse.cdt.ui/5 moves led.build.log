@@ -1,0 +1,11 @@
+20:03:00 **** Incremental Build of configuration Debug for project 5 moves led ****
+make all 
+Building target: 5 moves led.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,5 moves led.map -mmcu=atmega32 -o "5 moves led.elf"  ./main.o   
+avr-gcc.exe: moves: No such file or directory
+avr-gcc.exe: led.map: No such file or directory
+make: *** [5 moves led.elf] Error 1
+
+20:03:00 Build Finished (took 232ms)
+

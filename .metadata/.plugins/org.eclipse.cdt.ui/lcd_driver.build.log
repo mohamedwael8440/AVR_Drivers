@@ -1,0 +1,23 @@
+22:22:26 **** Incremental Build of configuration Debug for project lcd_driver ****
+make all 
+Building target: lcd_driver.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lcd_driver.map -mmcu=atmega32 -o "lcd_driver.elf"  ./DIO.o ./lcd.o ./main.o   
+./lcd.o: In function `lcd_vidWriteCommand':
+../lcd.c:15: undefined reference to `dio_vidSetPin'
+../lcd.c:17: undefined reference to `dio_vidSetPin'
+../lcd.c:19: undefined reference to `dio_vidSetPin'
+./lcd.o: In function `lcd_vidWriteCommand':
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:113: undefined reference to `dio_vidPort'
+./lcd.o: In function `lcd_vidWriteCommand':
+../lcd.c:15: undefined reference to `dio_vidWritePin'
+../lcd.c:19: undefined reference to `dio_vidWritePin'
+../lcd.c:19: undefined reference to `dio_vidSetPortValue'
+./lcd.o: In function `lcd_vidWriteCommand':
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:113: undefined reference to `dio_vidWritePin'
+./lcd.o: In function `lcd_vidWriteCommand':
+../lcd.c:23: undefined reference to `dio_vidWritePin'
+make: *** [lcd_driver.elf] Error 1
+
+22:22:27 Build Finished (took 858ms)
+

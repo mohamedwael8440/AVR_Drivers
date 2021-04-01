@@ -1,0 +1,55 @@
+12:35:54 **** Incremental Build of configuration Debug for project hbridge_relay ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 hbridge_relay.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5932 bytes (18.1% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:hbridge_relay.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.03s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "hbridge_relay.hex"
+avrdude: input file hbridge_relay.hex auto detected as Intel Hex
+avrdude: writing flash (5932 bytes):
+
+Writing | ################################################## | 100% 3.44s
+
+avrdude: 5932 bytes of flash written
+avrdude: verifying flash memory against hbridge_relay.hex:
+avrdude: load data flash data from input file hbridge_relay.hex:
+avrdude: input file hbridge_relay.hex auto detected as Intel Hex
+avrdude: input file hbridge_relay.hex contains 5932 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 3.21s
+
+avrdude: verifying ...
+avrdude: 5932 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+12:36:02 Build Finished (took 7s.514ms)
+

@@ -1,0 +1,87 @@
+00:54:53 **** Incremental Build of configuration Debug for project calculator ****
+make all 
+Building file: ../calculator.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"calculator.d" -MT"calculator.o" -c -o "calculator.o" "../calculator.c"
+In file included from ../calculator.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../calculator.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../calculator.c: In function 'PrintString_fromU8':
+../calculator.c:143: warning: implicit declaration of function 'itoa'
+../calculator.c: In function 'caal':
+../calculator.c:162: warning: implicit declaration of function 'Keypad_vidGetPressedKey'
+../calculator.c:201: warning: pointer targets in passing argument 1 of 'lcd_write_string' differ in signedness
+../calculator.c:203: warning: pointer targets in passing argument 1 of 'lcd_write_string' differ in signedness
+../calculator.c:160: warning: unused variable 'y'
+../calculator.c:160: warning: unused variable 'x'
+../calculator.c:159: warning: unused variable 'i'
+Finished building: ../calculator.c
+ 
+Building target: calculator.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,calculator.map -mmcu=atmega32 -o "calculator.elf"  ./DIO.o ./Keypad.o ./calculator.o ./lcd.o ./main.o   
+Finished building target: calculator.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S calculator.elf  >"calculator.lss"
+Finished building: calculator.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex calculator.elf  "calculator.hex"
+Finished building: calculator.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 calculator.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9760 bytes (29.8% Full)
+(.text + .data + .bootloader)
+
+Data:         25 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:calculator.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "calculator.hex"
+avrdude: input file calculator.hex auto detected as Intel Hex
+avrdude: writing flash (9760 bytes):
+
+Writing | ################################################## | 100% 5.66s
+
+avrdude: 9760 bytes of flash written
+avrdude: verifying flash memory against calculator.hex:
+avrdude: load data flash data from input file calculator.hex:
+avrdude: input file calculator.hex auto detected as Intel Hex
+avrdude: input file calculator.hex contains 9760 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.27s
+
+avrdude: verifying ...
+avrdude: 9760 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+00:55:06 Build Finished (took 12s.605ms)
+

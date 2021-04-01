@@ -1,0 +1,10 @@
+02:24:23 **** Incremental Build of configuration Debug for project traffic light ****
+make all 
+Building target: traffic light.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,traffic light.map -mmcu=atmega32 -o "traffic light.elf"  ./dio.o ./main.o ./seg.o   
+avr-gcc.exe: light.map: No such file or directory
+make: *** [traffic light.elf] Error 1
+
+02:24:24 Build Finished (took 1s.528ms)
+

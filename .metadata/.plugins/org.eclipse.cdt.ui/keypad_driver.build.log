@@ -1,0 +1,55 @@
+21:22:42 **** Build of configuration Debug for project keypad_driver ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 keypad_driver.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2398 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:keypad_driver.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "keypad_driver.hex"
+avrdude: input file keypad_driver.hex auto detected as Intel Hex
+avrdude: writing flash (2398 bytes):
+
+Writing | ################################################## | 100% 1.39s
+
+avrdude: 2398 bytes of flash written
+avrdude: verifying flash memory against keypad_driver.hex:
+avrdude: load data flash data from input file keypad_driver.hex:
+avrdude: input file keypad_driver.hex auto detected as Intel Hex
+avrdude: input file keypad_driver.hex contains 2398 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.30s
+
+avrdude: verifying ...
+avrdude: 2398 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+21:22:45 Build Finished (took 3s.486ms)
+

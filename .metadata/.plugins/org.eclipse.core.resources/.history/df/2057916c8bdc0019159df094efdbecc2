@@ -1,0 +1,34 @@
+/*
+ * timer.c
+ *
+ *  Created on: Sep 20, 2019
+ *      Author: Wael
+ */
+
+#include "standardtypes.h"
+#include "registers.h"
+#include "DIO.h"
+#include "utils.h"
+
+void __vector_10(void)  __attribute__((signal,__INTR_ATTRS));
+
+void timer_vidInit(void)
+{
+	TCCR0=0b00001010;
+	OCR0=99;  // value to compare
+	Set_Bit(TIMSK,1); //ENABLE INT bit0 or bit1(compare)
+	Set_Bit(SREG,7);  //global INT
+
+}
+
+extern u32 counter=0;
+
+void __vector_10(void)
+{
+   counter++;
+//   if(counter==80000)
+//   {
+//	   toggle_Bit(PORTA,0);
+//	   counter=0;
+//   }
+}

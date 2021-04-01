@@ -1,0 +1,42 @@
+19:36:58 **** Incremental Build of configuration Debug for project timer0_pwm ****
+make all 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+Finished building: ../timer.c
+ 
+Building target: timer0_pwm.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer0_pwm.map -mmcu=atmega32 -o "timer0_pwm.elf"  ./DIO.o ./main.o ./timer.o   
+Finished building target: timer0_pwm.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer0_pwm.elf  >"timer0_pwm.lss"
+Finished building: timer0_pwm.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex timer0_pwm.elf  "timer0_pwm.hex"
+Finished building: timer0_pwm.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer0_pwm.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    1976 bytes (6.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:timer0_pwm.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+19:36:59 Build Finished (took 1s.46ms)
+

@@ -1,0 +1,53 @@
+21:12:25 **** Incremental Build of configuration Debug for project keypad_d ****
+make all 
+Building file: ../dio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"dio.d" -MT"dio.o" -c -o "dio.o" "../dio.c"
+Finished building: ../dio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+Finished building: ../keypad.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:17: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: keypad_d.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,keypad_d.map -mmcu=atmega32 -o "keypad_d.elf"  ./dio.o ./keypad.o ./main.o   
+Finished building target: keypad_d.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S keypad_d.elf  >"keypad_d.lss"
+Finished building: keypad_d.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex keypad_d.elf  "keypad_d.hex"
+Finished building: keypad_d.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 keypad_d.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2398 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:keypad_d.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+21:12:27 Build Finished (took 1s.927ms)
+

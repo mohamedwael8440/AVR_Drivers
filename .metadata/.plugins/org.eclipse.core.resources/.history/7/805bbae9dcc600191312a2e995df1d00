@@ -1,0 +1,37 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 17, 2019
+ *      Author: Wael
+ */
+
+#include "std_types.h"
+#include "registers.h"
+#include "utils.h"
+#include "dio.h"
+#include "keypad.h"
+#include "keypad_cfg.h"
+
+
+extern u8 pressed_key;
+
+void main (void)
+
+{
+//keypad_vidInit();
+//dio_vidSetPinDir(b,pin7,output);
+while(1)
+{
+  // 	keypad_vidGetpressedKey();
+dio_vidPortDir(a,0b11111111);
+dio_vidSetPortValue(a,0b11111111);
+}
+
+
+
+
+
+
+
+}
+

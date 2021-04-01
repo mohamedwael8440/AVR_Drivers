@@ -1,0 +1,25 @@
+#define F_CPU 8000000
+#include <util/delay.h>
+#include "registers.h"
+#include "std_types.h"
+#include "utils.h"
+#include <avr/io.h>
+#include "DIO.h"
+#include "LCD.h"
+#include "spi.h"
+
+
+void main(void)
+{
+	LCD_init();
+	LCD_writestring("MASTER ");
+SPI_vidMasterInit();
+u8 x=SPI_u8MasterReceive();
+LCD_setposition(1,1);
+if(x=='A')
+{
+	LCD_writestring("CORRECT")
+}
+
+
+}

@@ -1,0 +1,6 @@
+02:58:47 **** Incremental Build of configuration Debug for project spiS ****
+make all 
+make: Nothing to be done for `all'.
+
+02:58:48 Build Finished (took 315ms)
+

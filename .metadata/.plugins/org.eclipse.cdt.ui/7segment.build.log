@@ -1,0 +1,47 @@
+19:32:12 **** Incremental Build of configuration Debug for project 7segment ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:15: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:17: warning: implicit declaration of function 'SEG_vidInit'
+../main.c:21: warning: implicit declaration of function 'SEG_vidDisplayNO'
+Finished building: ../main.c
+ 
+Building target: 7segment.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,7segment.map -mmcu=atmega32 -o "7segment.elf"  ./DIO.o ./SEG_HAL.o ./main.o   
+Finished building target: 7segment.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S 7segment.elf  >"7segment.lss"
+Finished building: 7segment.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex 7segment.elf  "7segment.hex"
+Finished building: 7segment.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 7segment.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5174 bytes (15.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:32:13 Build Finished (took 1s.14ms)
+

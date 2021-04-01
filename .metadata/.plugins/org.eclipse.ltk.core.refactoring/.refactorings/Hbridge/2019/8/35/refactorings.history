@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Hbridge/transistor.c&apos; to &apos;Hbridage.c&apos;" description="Rename resource &apos;transistor.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="transistor.c" name="Hbridage.c" stamp="1567190255849" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Hbridge/transistor.h&apos; to &apos;Hbridage.h&apos;" description="Rename resource &apos;transistor.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="transistor.h" name="Hbridage.h" stamp="1567190281168" updateReferences="true"/>
+</session>

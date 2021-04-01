@@ -1,0 +1,73 @@
+19:38:02 **** Incremental Build of configuration Debug for project RTOS_Lab1 ****
+make all 
+Building file: ../APP.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP.d" -MT"APP.o" -c -o "APP.o" "../APP.c"
+Finished building: ../APP.c
+ 
+Building target: RTOS_Lab1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTOS_Lab1.map -mmcu=atmega32 -o "RTOS_Lab1.elf"  ./APP.o ./croutine.o ./heap_1.o ./list.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: RTOS_Lab1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTOS_Lab1.elf  >"RTOS_Lab1.lss"
+Finished building: RTOS_Lab1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTOS_Lab1.elf  "RTOS_Lab1.hex"
+Finished building: RTOS_Lab1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 RTOS_Lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10296 bytes (31.4% Full)
+(.text + .data + .bootloader)
+
+Data:        767 bytes (37.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:RTOS_Lab1.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "RTOS_Lab1.hex"
+avrdude: input file RTOS_Lab1.hex auto detected as Intel Hex
+avrdude: writing flash (10296 bytes):
+
+Writing | ################################################## | 100% 5.97s
+
+avrdude: 10296 bytes of flash written
+avrdude: verifying flash memory against RTOS_Lab1.hex:
+avrdude: load data flash data from input file RTOS_Lab1.hex:
+avrdude: input file RTOS_Lab1.hex auto detected as Intel Hex
+avrdude: input file RTOS_Lab1.hex contains 10296 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.57s
+
+avrdude: verifying ...
+avrdude: 10296 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+19:38:15 Build Finished (took 13s.11ms)
+

@@ -1,0 +1,55 @@
+20:49:18 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10660 bytes (32.5% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:ADC.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "ADC.hex"
+avrdude: input file ADC.hex auto detected as Intel Hex
+avrdude: writing flash (10660 bytes):
+
+Writing | ################################################## | 100% 6.19s
+
+avrdude: 10660 bytes of flash written
+avrdude: verifying flash memory against ADC.hex:
+avrdude: load data flash data from input file ADC.hex:
+avrdude: input file ADC.hex auto detected as Intel Hex
+avrdude: input file ADC.hex contains 10660 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 5.76s
+
+avrdude: verifying ...
+avrdude: 10660 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+20:49:31 Build Finished (took 13s.119ms)
+

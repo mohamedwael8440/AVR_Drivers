@@ -1,0 +1,78 @@
+18:16:45 **** Incremental Build of configuration Debug for project servo_timer1 ****
+make all 
+Building file: ../APP.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"APP.d" -MT"APP.o" -c -o "APP.o" "../APP.c"
+In file included from ../APP.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../APP.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../APP.c
+ 
+Building target: servo_timer1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,servo_timer1.map -mmcu=atmega32 -o "servo_timer1.elf"  ./APP.o ./DIO.o ./Timer1.o ./lcd.o   
+Finished building target: servo_timer1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S servo_timer1.elf  >"servo_timer1.lss"
+Finished building: servo_timer1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex servo_timer1.elf  "servo_timer1.hex"
+Finished building: servo_timer1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 servo_timer1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11736 bytes (35.8% Full)
+(.text + .data + .bootloader)
+
+Data:        349 bytes (17.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:servo_timer1.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "servo_timer1.hex"
+avrdude: input file servo_timer1.hex auto detected as Intel Hex
+avrdude: writing flash (11736 bytes):
+
+Writing | ################################################## | 100% 6.80s
+
+avrdude: 11736 bytes of flash written
+avrdude: verifying flash memory against servo_timer1.hex:
+avrdude: load data flash data from input file servo_timer1.hex:
+avrdude: input file servo_timer1.hex auto detected as Intel Hex
+avrdude: input file servo_timer1.hex contains 11736 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 6.33s
+
+avrdude: verifying ...
+avrdude: 11736 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+18:17:00 Build Finished (took 14s.913ms)
+

@@ -1,0 +1,38 @@
+#include "standardtypes.h"
+#include "registers.h"
+#include "DIO.h"
+#include "utils.h"
+#include "ADC.h"
+#include "lcd.h"
+#include <avr/delay.h>
+
+u16 digital_read;
+u16 digital_read2;
+
+void main(void)
+{
+ LCD_Init();
+  ADC_init();
+
+  while(1)
+  {
+	  digital_read=ADC_u16Read(0);
+	  digital_read2=ADC_u16Read(1);
+
+//	  DIO_vidWritePortValue(c,digital_read);
+	  u8 Ang=((digital_read*500)/1024);
+	  u8 Ang2=((digital_read2*5000)/1024);
+	  Gotoxy(1,1);
+	  LCD_String("TEMP : ");
+	  LCD_vidWriteInteger(Ang);
+	  Gotoxy(2,1);
+	  LCD_String("LIGHT : ");
+	  LCD_vidWriteInteger(Ang2);
+	  _delay_ms(1000);
+
+
+  }
+
+
+}
+

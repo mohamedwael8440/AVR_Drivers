@@ -1,0 +1,13 @@
+
+#include "dio2.h"
+#include "standardtypes.h"
+#include "registers.h"
+#include "utils.h"
+#include "SPI.h"
+
+void main(void)
+{
+SPI_vidMasterInit();
+SPI_u8MasterReceive();
+
+}

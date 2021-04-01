@@ -1,0 +1,28 @@
+02:58:46 **** Incremental Build of configuration Debug for project spiM ****
+make all 
+Building file: ../ATmega16_SPI_Master.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATmega16_SPI_Master.d" -MT"ATmega16_SPI_Master.o" -c -o "ATmega16_SPI_Master.o" "../ATmega16_SPI_Master.c"
+In file included from ../ATmega16_SPI_Master.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../ATmega16_SPI_Master.c:13:
+../LCD.h:8: warning: data definition has no type or storage class
+../LCD.h:8: warning: type defaults to 'int' in declaration of 'LCD_setposition'
+../ATmega16_SPI_Master.c: In function 'main':
+../ATmega16_SPI_Master.c:29: warning: pointer targets in passing argument 1 of 'LCD_writestring' differ in signedness
+../ATmega16_SPI_Master.c:31: warning: pointer targets in passing argument 1 of 'LCD_writestring' differ in signedness
+../ATmega16_SPI_Master.c:24: warning: unused variable 'buffer'
+Finished building: ../ATmega16_SPI_Master.c
+ 
+Building target: spiM.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,spiM.map -mmcu=atmega32 -o "spiM.elf"  ./ATmega16_SPI_Master.o ./DIO.o ./LCD.o ./SPI_Master_C_file.o   
+Finished building target: spiM.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex spiM.elf  "spiM.hex"
+Finished building: spiM.hex
+ 
+
+02:58:47 Build Finished (took 674ms)
+

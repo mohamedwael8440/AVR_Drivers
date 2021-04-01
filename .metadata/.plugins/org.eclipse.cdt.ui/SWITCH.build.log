@@ -1,0 +1,76 @@
+06:01:51 **** Incremental Build of configuration Debug for project SWITCH ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:7:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:11: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: SWITCH.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SWITCH.map -mmcu=atmega32 -o "SWITCH.elf"  ./DIO.o ./main.o ./switch.o   
+Finished building target: SWITCH.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SWITCH.elf  >"SWITCH.lss"
+Finished building: SWITCH.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SWITCH.elf  "SWITCH.hex"
+Finished building: SWITCH.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 SWITCH.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    1810 bytes (5.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:SWITCH.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "SWITCH.hex"
+avrdude: input file SWITCH.hex auto detected as Intel Hex
+avrdude: writing flash (1810 bytes):
+
+Writing | ################################################## | 100% 1.06s
+
+avrdude: 1810 bytes of flash written
+avrdude: verifying flash memory against SWITCH.hex:
+avrdude: load data flash data from input file SWITCH.hex:
+avrdude: input file SWITCH.hex auto detected as Intel Hex
+avrdude: input file SWITCH.hex contains 1810 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.98s
+
+avrdude: verifying ...
+avrdude: 1810 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+06:01:54 Build Finished (took 3s.603ms)
+

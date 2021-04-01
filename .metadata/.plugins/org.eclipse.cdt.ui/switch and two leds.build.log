@@ -1,0 +1,25 @@
+04:13:57 **** Incremental Build of configuration Debug for project switch and two leds ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:4:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:5:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:8: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: switch and two leds.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,switch and two leds.map -mmcu=atmega32 -o "switch and two leds.elf"  ./main.o   
+avr-gcc.exe: and: No such file or directory
+avr-gcc.exe: two: No such file or directory
+avr-gcc.exe: leds.map: No such file or directory
+make: *** [switch and two leds.elf] Error 1
+
+04:13:58 Build Finished (took 785ms)
+

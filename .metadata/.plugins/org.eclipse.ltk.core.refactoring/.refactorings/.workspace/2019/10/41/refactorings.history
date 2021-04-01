@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;timer0_pwm&apos; to &apos;timer0_ICU_dutyT0&apos;" description="Rename resource &apos;timer0_pwm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/timer0_pwm" name="timer0_ICU_dutyT0" stamp="1570392592687" updateReferences="true"/>
+</session>

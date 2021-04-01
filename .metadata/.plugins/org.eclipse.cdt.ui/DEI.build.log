@@ -1,0 +1,81 @@
+08:49:13 **** Incremental Build of configuration Debug for project DEI ****
+make all 
+Building file: ../DEI.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"DEI.d" -MT"DEI.o" -c -o "DEI.o" "../DEI.c"
+../DEI.c:28: warning: '__INTR_ATTRS' attribute directive ignored
+../DEI.c:35: warning: '__INTR_ATTRS' attribute directive ignored
+Finished building: ../DEI.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:17: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: DEI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DEI.map -mmcu=atmega32 -o "DEI.elf"  ./DEI.o ./DIO.o ./main.o   
+Finished building target: DEI.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DEI.elf  >"DEI.lss"
+Finished building: DEI.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DEI.elf  "DEI.hex"
+Finished building: DEI.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DEI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2008 bytes (6.1% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:DEI.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.01s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "DEI.hex"
+avrdude: input file DEI.hex auto detected as Intel Hex
+avrdude: writing flash (2008 bytes):
+
+Writing | ################################################## | 100% 1.18s
+
+avrdude: 2008 bytes of flash written
+avrdude: verifying flash memory against DEI.hex:
+avrdude: load data flash data from input file DEI.hex:
+avrdude: input file DEI.hex auto detected as Intel Hex
+avrdude: input file DEI.hex contains 2008 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.09s
+
+avrdude: verifying ...
+avrdude: 2008 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+08:49:19 Build Finished (took 5s.520ms)
+

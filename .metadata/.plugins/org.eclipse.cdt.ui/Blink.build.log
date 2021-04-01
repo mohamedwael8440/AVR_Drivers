@@ -1,0 +1,24 @@
+02:04:35 **** Incremental Build of configuration Debug for project Blink ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Blink.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5572 bytes (17.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:Blink.hex:a
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+02:04:43 Build Finished (took 8s.349ms)
+
